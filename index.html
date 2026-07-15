@@ -188,17 +188,21 @@
   .status-cell .l{font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;}
 
   .photo-frame{
-    .profile-img{
-    width:100%; height:100%;
-    object-fit:cover;
-    border-radius:18px;
-    }
     position:relative; width:100%; max-width:280px; margin:0 auto;
     aspect-ratio:1/1.08; border-radius:18px;
     background:linear-gradient(160deg, rgba(52,208,196,0.16), rgba(139,147,248,0.10));
     border:1px solid var(--border);
     display:flex; align-items:center; justify-content:center;
     box-shadow:0 0 60px -10px rgba(52,208,196,0.18);
+  }
+  .profile-img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* Forces image to scale proportionally without stretching */
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    z-index: 1;
   }
   .photo-frame .initials{
     font-family:'IBM Plex Mono', monospace; font-size:64px; font-weight:600;
