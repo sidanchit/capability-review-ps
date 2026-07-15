@@ -3,355 +3,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anchit Sanghoi — Capability Review</title>
+<title>Anchit Sanghoi — Data & AI Tech Lead Capability Review</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0a1120;
-    --bg-elev:#111a2e;
-    --bg-elev-2:#0e1626;
-    --border:#22304a;
-    --border-soft:#1a2438;
-    --text:#e7ecf5;
-    --text-dim:#93a1be;
-    --text-faint:#5c6b8a;
-    --teal:#34d0c4;
-    --teal-dim:#1c6e68;
-    --amber:#f2b84b;
-    --amber-dim:#8a641f;
-    --indigo:#8b93f8;
-    --indigo-dim:#4a4f9e;
-    --radius:14px;
-    --maxw:1180px;
+  :root {
+    --bg: #0a1120;
+    --bg-elev: #111a2e;
+    --border: #22304a;
+    --border-soft: #1a2438;
+    --text: #e7ecf5;
+    --text-dim: #93a1be;
+    --text-faint: #5c6b8a;
+    --teal: #34d0c4;
+    --teal-dim: #1c6e68;
+    --amber: #f2b84b;
+    --amber-dim: #8a641f;
+    --indigo: #8b93f8;
+    --indigo-dim: #4a4f9e;
+    --radius: 14px;
+    --maxw: 1180px;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   }
-  body{
-    margin:0;
+  body {
+    margin: 0;
     background:
       radial-gradient(ellipse 900px 500px at 15% -5%, rgba(52,208,196,0.08), transparent 60%),
       radial-gradient(ellipse 700px 500px at 100% 10%, rgba(139,147,248,0.07), transparent 60%),
       var(--bg);
-    color:var(--text);
-    font-family:'IBM Plex Sans', system-ui, sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
+    color: var(--text);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
-  h1,h2,h3,h4{
-    font-family:'IBM Plex Mono', monospace;
-    margin:0;
-    letter-spacing:-0.01em;
+  h1, h2, h3, h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    margin: 0;
+    letter-spacing: -0.01em;
   }
-  p{margin:0;}
-  a{color:inherit;}
-  ::selection{background:var(--teal); color:#04211f;}
+  p { margin: 0; }
+  a { color: inherit; }
+  ::selection { background: var(--teal); color: #04211f; }
 
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--teal);
-    display:flex;
-    align-items:center;
-    gap:9px;
-    margin-bottom:16px;
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 16px;
   }
-  .eyebrow::before{
-    content:'';
-    width:7px; height:7px;
-    border-radius:50%;
-    background:var(--teal);
-    box-shadow:0 0 0 3px rgba(52,208,196,0.18);
-    flex-shrink:0;
+  .eyebrow::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 0 3px rgba(52,208,196,0.18);
+    flex-shrink: 0;
   }
-  .eyebrow.amber{color:var(--amber);}
-  .eyebrow.amber::before{background:var(--amber); box-shadow:0 0 0 3px rgba(242,184,75,0.18);}
-  .eyebrow.indigo{color:var(--indigo);}
-  .eyebrow.indigo::before{background:var(--indigo); box-shadow:0 0 0 3px rgba(139,147,248,0.18);}
+  .eyebrow.amber { color: var(--amber); }
+  .eyebrow.amber::before { background: var(--amber); box-shadow: 0 0 0 3px rgba(242,184,75,0.18); }
+  .eyebrow.indigo { color: var(--indigo); }
+  .eyebrow.indigo::before { background: var(--indigo); box-shadow: 0 0 0 3px rgba(139,147,248,0.18); }
 
-  /* ---------- pipeline rail (signature element) ---------- */
-  .rail{
-    position:fixed;
-    left:36px; top:0; bottom:0;
-    width:2px;
-    z-index:5;
-    display:none;
+  /* ---------- pipeline rail ---------- */
+  .rail {
+    position: fixed;
+    left: 36px; top: 0; bottom: 0;
+    width: 2px;
+    z-index: 5;
+    display: none;
   }
-  @media (min-width:1200px){ .rail{display:block;} }
-  .rail-track{
-    position:absolute; left:0; top:120px; bottom:120px; width:2px;
-    background:linear-gradient(to bottom, transparent, var(--border-soft) 6%, var(--border-soft) 94%, transparent);
+  @media (min-width: 1200px) { .rail { display: block; } }
+  .rail-track {
+    position: absolute; left: 0; top: 120px; bottom: 120px; width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--border-soft) 6%, var(--border-soft) 94%, transparent);
   }
-  .rail-progress{
-    position:absolute; left:0; top:120px; width:2px; height:0;
-    background:linear-gradient(to bottom, var(--teal), var(--indigo));
-    box-shadow:0 0 12px rgba(52,208,196,0.5);
-    transition:height .08s linear;
+  .rail-progress {
+    position: absolute; left: 0; top: 120px; width: 2px; height: 0;
+    background: linear-gradient(to bottom, var(--teal), var(--indigo));
+    box-shadow: 0 0 12px rgba(52,208,196,0.5);
+    transition: height .08s linear;
   }
-  .rail-node{
-    position:absolute; left:-4px; width:10px; height:10px; border-radius:50%;
-    background:var(--bg-elev2, var(--bg-elev)); border:2px solid var(--border);
-    transition:all .25s ease;
+  .rail-node {
+    position: absolute; left: -4px; width: 10px; height: 10px; border-radius: 50%;
+    background: var(--bg-elev); border: 2px solid var(--border);
+    transition: all .25s ease;
   }
-  .rail-node.active{border-color:var(--teal); background:var(--teal); box-shadow:0 0 0 5px rgba(52,208,196,0.15);}
+  .rail-node.active { border-color: var(--teal); background: var(--teal); box-shadow: 0 0 0 5px rgba(52,208,196,0.15); }
 
   /* ---------- nav ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(10,17,32,0.72);
-    backdrop-filter:blur(14px) saturate(140%);
-    -webkit-backdrop-filter:blur(14px) saturate(140%);
-    border-bottom:1px solid var(--border-soft);
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10,17,32,0.72);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid var(--border-soft);
   }
-  .navrow{
-    max-width:var(--maxw); margin:0 auto; padding:0 28px;
-    height:66px; display:flex; align-items:center; justify-content:space-between;
+  .navrow {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 28px;
+    height: 66px; display: flex; align-items: center; justify-content: space-between;
   }
-  .brand{
-    font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:15px;
-    display:flex; align-items:center; gap:10px; white-space:nowrap;
+  .brand {
+    font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;
+    display: flex; align-items: center; gap: 10px; white-space: nowrap;
   }
-  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--teal); box-shadow:0 0 8px rgba(52,208,196,.7); flex-shrink:0;}
-  .brand .sub{color:var(--text-faint); font-weight:400; font-size:12px; display:none;}
-  @media (min-width:640px){ .brand .sub{display:inline;} }
+  .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px rgba(52,208,196,.7); flex-shrink: 0; }
+  .brand .sub { color: var(--text-faint); font-weight: 400; font-size: 12px; display: none; }
+  @media (min-width: 640px) { .brand .sub { display: inline; } }
 
-  nav.links{display:none; align-items:center; gap:2px;}
-  @media (min-width:860px){ nav.links{display:flex;} }
-  nav.links a{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px; letter-spacing:0.04em;
-    color:var(--text-dim); text-decoration:none;
-    padding:8px 13px; border-radius:8px;
-    display:flex; align-items:center; gap:7px;
-    transition:color .2s ease, background .2s ease;
+  nav.links { display: none; align-items: center; gap: 2px; }
+  @media (min-width: 860px) { nav.links { display: flex; } }
+  nav.links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px; letter-spacing: 0.04em;
+    color: var(--text-dim); text-decoration: none;
+    padding: 8px 13px; border-radius: 8px;
+    display: flex; align-items: center; gap: 7px;
+    transition: color .2s ease, background .2s ease;
   }
-  nav.links a .led{width:5px; height:5px; border-radius:50%; background:var(--border); transition:all .2s ease;}
-  nav.links a:hover{color:var(--text); background:rgba(255,255,255,0.03);}
-  nav.links a.active{color:var(--teal); background:rgba(52,208,196,0.08);}
-  nav.links a.active .led{background:var(--teal); box-shadow:0 0 6px rgba(52,208,196,.8);}
+  nav.links a .led { width: 5px; height: 5px; border-radius: 50%; background: var(--border); transition: all .2s ease; }
+  nav.links a:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+  nav.links a.active { color: var(--teal); background: rgba(52,208,196,0.08); }
+  nav.links a.active .led { background: var(--teal); box-shadow: 0 0 6px rgba(52,208,196,.8); }
 
-  .navcta{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600;
-    color:var(--bg); background:var(--teal);
-    padding:8px 14px; border-radius:8px; text-decoration:none;
-    white-space:nowrap;
+  .navcta {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600;
+    color: var(--bg); background: var(--teal);
+    padding: 8px 14px; border-radius: 8px; text-decoration: none;
+    white-space: nowrap;
   }
 
-  .mobnav-btn{display:flex; background:none; border:1px solid var(--border); color:var(--text); border-radius:8px; padding:8px 10px; font-family:inherit; cursor:pointer;}
-  @media (min-width:860px){ .mobnav-btn{display:none;} }
-  #mobnav{
-    display:none; border-top:1px solid var(--border-soft);
-    background:rgba(10,17,32,0.97);
+  .mobnav-btn { display: flex; background: none; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 8px 10px; font-family: inherit; cursor: pointer; }
+  @media (min-width: 860px) { .mobnav-btn { display: none; } }
+  #mobnav {
+    display: none; border-top: 1px solid var(--border-soft);
+    background: rgba(10,17,32,0.97);
   }
-  #mobnav.open{display:block;}
-  #mobnav a{
-    display:block; padding:13px 28px; color:var(--text-dim); text-decoration:none;
-    font-family:'IBM Plex Mono', monospace; font-size:13px; border-bottom:1px solid var(--border-soft);
+  #mobnav.open { display: block; }
+  #mobnav a {
+    display: block; padding: 13px 28px; color: var(--text-dim); text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; border-bottom: 1px solid var(--border-soft);
   }
-  #mobnav a.active{color:var(--teal);}
+  #mobnav a.active { color: var(--teal); }
 
-  section{padding:110px 0; border-bottom:1px solid var(--border-soft); scroll-margin-top:66px;}
+  section { padding: 110px 0; border-bottom: 1px solid var(--border-soft); scroll-margin-top: 66px; }
 
   /* ---------- reveal on scroll ---------- */
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
 
   /* ---------- hero ---------- */
-  #hero{padding-top:88px; border-bottom:1px solid var(--border-soft);}
-  .hero-grid{display:grid; grid-template-columns:1fr; gap:52px; align-items:center;}
-  @media (min-width:920px){ .hero-grid{grid-template-columns:1.35fr 1fr;} }
-  .hero h1{font-size:clamp(34px,5vw,54px); line-height:1.05; margin-bottom:14px;}
-  .hero h1 .role{
-    display:block; font-size:0.36em; font-weight:500; color:var(--text-dim);
-    margin-top:14px; letter-spacing:0.01em; font-family:'IBM Plex Sans', sans-serif;
+  #about { padding-top: 88px; border-bottom: 1px solid var(--border-soft); }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 52px; align-items: center; }
+  @media (min-width: 920px) { .hero-grid { grid-template-columns: 1.35fr 1fr; } }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.05; margin-bottom: 14px; }
+  .hero h1 .role {
+    display: block; font-size: 0.36em; font-weight: 500; color: var(--text-dim);
+    margin-top: 14px; letter-spacing: 0.01em; font-family: 'IBM Plex Sans', sans-serif;
   }
-  .hero .lede{
-    font-size:16.5px; color:var(--text-dim); max-width:56ch; margin-top:22px;
+  .hero .lede {
+    font-size: 16.5px; color: var(--text-dim); max-width: 56ch; margin-top: 22px;
   }
-  .hero .lede strong{color:var(--text); font-weight:600;}
+  .hero .lede strong { color: var(--text); font-weight: 600; }
 
-  .status-strip{
-    margin-top:38px; display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
-    background:var(--border-soft); border:1px solid var(--border-soft); border-radius:var(--radius); overflow:hidden;
+  .status-strip {
+    margin-top: 38px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: var(--radius); overflow: hidden;
   }
-  @media (min-width:560px){ .status-strip{grid-template-columns:repeat(4,1fr);} }
-  .status-cell{background:var(--bg-elev2, var(--bg-elev)); padding:16px 16px;}
-  .status-cell .n{font-family:'IBM Plex Mono', monospace; font-size:21px; font-weight:600; color:var(--teal);}
-  .status-cell .l{font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;}
+  @media (min-width: 560px) { .status-strip { grid-template-columns: repeat(4, 1fr); } }
+  .status-cell { background: var(--bg-elev); padding: 16px 16px; }
+  .status-cell .n { font-family: 'IBM Plex Mono', monospace; font-size: 21px; font-weight: 600; color: var(--teal); }
+  .status-cell .l { font-size: 11px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px;}
 
-  .photo-frame{
-    position:relative; width:100%; max-width:280px; margin:0 auto;
-    aspect-ratio:1/1.08; border-radius:18px;
-    background:linear-gradient(160deg, rgba(52,208,196,0.16), rgba(139,147,248,0.10));
-    border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 0 60px -10px rgba(52,208,196,0.18);
+  .photo-frame {
+    position: relative; width: 100%; max-width: 280px; margin: 0 auto;
+    aspect-ratio: 1/1.08; border-radius: 18px;
+    background: linear-gradient(160deg, rgba(52,208,196,0.16), rgba(139,147,248,0.10));
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 60px -10px rgba(52,208,196,0.18);
   }
-  .photo-frame .initials{
-    font-family:'IBM Plex Mono', monospace; font-size:64px; font-weight:600;
-    color:var(--text); opacity:0.9;
+  .photo-frame .initials {
+    font-family: 'IBM Plex Mono', monospace; font-size: 64px; font-weight: 600;
+    color: var(--text); opacity: 0.9;
   }
-  .photo-frame .corner{position:absolute; width:18px; height:18px; border-color:var(--teal); opacity:.7;}
-  .photo-frame .c-tl{top:14px; left:14px; border-top:2px solid; border-left:2px solid;}
-  .photo-frame .c-br{bottom:14px; right:14px; border-bottom:2px solid; border-right:2px solid;}
-  .photo-caption{text-align:center; margin-top:14px; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); letter-spacing:.05em;}
+  .photo-frame .corner { position: absolute; width: 18px; height: 18px; border-color: var(--teal); opacity: .7; }
+  .photo-frame .c-tl { top: 14px; left: 14px; border-top: 2px solid; border-left: 2px solid; }
+  .photo-frame .c-br { bottom: 14px; right: 14px; border-bottom: 2px solid; border-right: 2px solid; }
+  .photo-caption { text-align: center; margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-faint); letter-spacing: .05em; }
 
   /* ---------- section heading ---------- */
-  .shead{max-width:640px; margin-bottom:52px;}
-  .shead h2{font-size:clamp(26px,3.4vw,36px); line-height:1.15;}
-  .shead p{color:var(--text-dim); margin-top:14px; font-size:15.5px;}
+  .shead { max-width: 640px; margin-bottom: 52px; }
+  .shead h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.15; }
+  .shead p { color: var(--text-dim); margin-top: 14px; font-size: 15.5px; }
 
   /* ---------- timeline ---------- */
-  .tl{position:relative; padding-left:2px;}
-  .tl::before{
-    content:''; position:absolute; left:19px; top:8px; bottom:8px; width:2px;
-    background:linear-gradient(to bottom, var(--teal), var(--border-soft) 90%);
+  .tl { position: relative; padding-left: 2px; }
+  .tl::before {
+    content: ''; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px;
+    background: linear-gradient(to bottom, var(--teal), var(--border-soft) 90%);
   }
-  .tl-item{position:relative; padding-left:56px; margin-bottom:6px;}
-  .tl-item .node{
-    position:absolute; left:11px; top:6px; width:18px; height:18px; border-radius:50%;
-    background:var(--bg-elev); border:2px solid var(--teal);
-    display:flex; align-items:center; justify-content:center;
+  .tl-item { position: relative; padding-left: 56px; margin-bottom: 6px; }
+  .tl-item .node {
+    position: absolute; left: 11px; top: 6px; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--bg-elev); border: 2px solid var(--teal);
+    display: flex; align-items: center; justify-content: center;
   }
-  .tl-item .node::after{content:''; width:6px; height:6px; border-radius:50%; background:var(--teal);}
-  .tl-item.muted .node{border-color:var(--border);}
-  .tl-item.muted .node::after{background:var(--text-faint);}
-  .tl-item details{
-    background:var(--bg-elev); border:1px solid var(--border-soft); border-radius:12px;
-    padding:18px 20px; margin-bottom:22px; transition:border-color .2s ease;
+  .tl-item .node::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+  .tl-item.muted .node { border-color: var(--border); }
+  .tl-item.muted .node::after { background: var(--text-faint); }
+  .tl-item details {
+    background: var(--bg-elev); border: 1px solid var(--border-soft); border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 22px; transition: border-color .2s ease;
   }
-  .tl-item details[open]{border-color:var(--teal);}
-  .tl-item summary{
-    cursor:pointer; list-style:none; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  .tl-item details[open] { border-color: var(--teal); }
+  .tl-item summary {
+    cursor: pointer; list-style: none; display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap;
   }
-  .tl-item summary::-webkit-details-marker{display:none;}
-  .tl-item .when{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--teal); letter-spacing:.06em; text-transform:uppercase;}
-  .tl-item .title{font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:16px; margin-top:6px;}
-  .tl-item .chev{font-family:'IBM Plex Mono', monospace; color:var(--text-faint); font-size:13px; transition:transform .2s ease;}
-  .tl-item details[open] .chev{transform:rotate(90deg); color:var(--teal);}
-  .tl-item .body{color:var(--text-dim); font-size:14.5px; margin-top:14px; max-width:66ch;}
-  .tl-item .tags{margin-top:14px; display:flex; flex-wrap:wrap; gap:7px;}
+  .tl-item summary::-webkit-details-marker { display: none; }
+  .tl-item .when { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--teal); letter-spacing: .06em; text-transform: uppercase; }
+  .tl-item .title { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 16px; margin-top: 6px; }
+  .tl-item .chev { font-family: 'IBM Plex Mono', monospace; color: var(--text-faint); font-size: 13px; transition: transform .2s ease; }
+  .tl-item details[open] .chev { transform: rotate(90deg); color: var(--teal); }
+  .tl-item .body { color: var(--text-dim); font-size: 14.5px; margin-top: 14px; max-width: 66ch; }
+  .tl-item .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 7px; }
 
-  .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; padding:4px 9px; border-radius:6px;
-    border:1px solid var(--border); color:var(--text-dim); background:rgba(255,255,255,0.02);
+  .tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 4px 9px; border-radius: 6px;
+    border: 1px solid var(--border); color: var(--text-dim); background: rgba(255,255,255,0.02);
   }
 
   /* ---------- deliverables ---------- */
-  .grid3{display:grid; grid-template-columns:1fr; gap:18px;}
-  @media (min-width:680px){ .grid3{grid-template-columns:1fr 1fr;} }
-  @media (min-width:1020px){ .grid3{grid-template-columns:1fr 1fr 1fr;} }
-  .dcard{
-    background:var(--bg-elev); border:1px solid var(--border-soft); border-radius:var(--radius);
-    padding:24px; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  .grid3 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  @media (min-width: 680px) { .grid3 { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1020px) { .grid3 { grid-template-columns: 1fr 1fr 1fr; } }
+  .dcard {
+    background: var(--bg-elev); border: 1px solid var(--border-soft); border-radius: var(--radius);
+    padding: 24px; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
   }
-  .dcard:hover{transform:translateY(-3px); border-color:var(--teal); box-shadow:0 14px 30px -14px rgba(52,208,196,0.25);}
-  .dcard .idx{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-faint); letter-spacing:.08em;}
-  .dcard h3{font-size:17px; margin-top:10px; font-weight:600;}
-  .dcard .desc{color:var(--text-dim); font-size:14px; margin-top:10px;}
-  .dcard .tags{margin-top:16px; display:flex; flex-wrap:wrap; gap:6px;}
+  .dcard:hover { transform: translateY(-3px); border-color: var(--teal); box-shadow: 0 14px 30px -14px rgba(52,208,196,0.25); }
+  .dcard .idx { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-faint); letter-spacing: .08em; }
+  .dcard h3 { font-size: 17px; margin-top: 10px; font-weight: 600; }
+  .dcard .desc { color: var(--text-dim); font-size: 14px; margin-top: 10px; }
+  .dcard .tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
 
   /* ---------- values ---------- */
-  .vgrid{display:grid; grid-template-columns:1fr; gap:14px;}
-  @media (min-width:760px){ .vgrid{grid-template-columns:1fr 1fr;} }
-  .vcard{
-    display:flex; gap:16px; background:var(--bg-elev); border:1px solid var(--border-soft);
-    border-radius:var(--radius); padding:22px;
+  .vgrid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 760px) { .vgrid { grid-template-columns: 1fr 1fr; } }
+  .vcard {
+    display: flex; gap: 16px; background: var(--bg-elev); border: 1px solid var(--border-soft);
+    border-radius: var(--radius); padding: 22px;
   }
-  .vcard .vnum{
-    font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--indigo);
-    width:34px; height:34px; border-radius:9px; border:1px solid var(--indigo-dim);
-    display:flex; align-items:center; justify-content:center; flex-shrink:0; background:rgba(139,147,248,0.08);
+  .vcard .vnum {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--indigo);
+    width: 34px; height: 34px; border-radius: 9px; border: 1px solid var(--indigo-dim);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(139,147,248,0.08);
   }
-  .vcard h3{font-size:15.5px; font-weight:600;}
-  .vcard .story{color:var(--text-dim); font-size:13.8px; margin-top:8px;}
+  .vcard h3 { font-size: 15.5px; font-weight: 600; }
+  .vcard .story { color: var(--text-dim); font-size: 13.8px; margin-top: 8px; }
 
   /* ---------- awards ---------- */
-  .agrid{display:grid; grid-template-columns:1fr; gap:16px;}
-  @media (min-width:680px){ .agrid{grid-template-columns:1fr 1fr;} }
-  .acard{
-    background:linear-gradient(160deg, rgba(242,184,75,0.05), transparent 60%), var(--bg-elev);
-    border:1px solid var(--border-soft); border-radius:var(--radius); padding:22px;
-    position:relative; overflow:hidden;
+  .agrid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 680px) { .agrid { grid-template-columns: 1fr 1fr; } }
+  .acard {
+    background: linear-gradient(160deg, rgba(242,184,75,0.05), transparent 60%), var(--bg-elev);
+    border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px;
+    position: relative; overflow: hidden;
   }
-  .acard::before{
-    content:'★'; position:absolute; top:14px; right:16px; color:var(--amber); opacity:.35; font-size:20px;
+  .acard.future {
+    background: linear-gradient(160deg, rgba(52,208,196,0.06), transparent 60%), var(--bg-elev);
+    border-color: var(--teal-dim);
   }
-  .acard .cat{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--amber); text-transform:uppercase; letter-spacing:.08em;}
-  .acard h3{font-size:16px; margin-top:8px; padding-right:26px;}
-  .acard .blurb{color:var(--text-dim); font-size:13.7px; margin-top:10px;}
-  .acard .by{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-top:14px; padding-top:14px; border-top:1px solid var(--border-soft);}
+  .acard::before {
+    content: '★'; position: absolute; top: 14px; right: 16px; color: var(--amber); opacity: .35; font-size: 20px;
+  }
+  .acard.future::before { color: var(--teal); opacity: .6; }
+  .acard .cat { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--amber); text-transform: uppercase; letter-spacing: .08em; }
+  .acard.future .cat { color: var(--teal); }
+  .acard h3 { font-size: 16px; margin-top: 8px; padding-right: 26px; }
+  .acard .blurb { color: var(--text-dim); font-size: 13.7px; margin-top: 10px; }
+  .acard .by { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-faint); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-soft); }
 
-  /* ---------- endorsements (promotion letters) ---------- */
-  .egrid{display:grid; grid-template-columns:1fr; gap:16px; margin-bottom:60px;}
-  @media (min-width:900px){ .egrid{grid-template-columns:repeat(3,1fr);} }
-  .ecard{
-    background:linear-gradient(160deg, rgba(139,147,248,0.07), transparent 55%), var(--bg-elev);
-    border:1px solid var(--indigo-dim); border-radius:var(--radius); padding:24px;
+  /* ---------- endorsements ---------- */
+  .egrid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 60px; }
+  @media (min-width: 900px) { .egrid { grid-template-columns: repeat(3, 1fr); } }
+  .ecard {
+    background: linear-gradient(160deg, rgba(139,147,248,0.07), transparent 55%), var(--bg-elev);
+    border: 1px solid var(--indigo-dim); border-radius: var(--radius); padding: 24px;
   }
-  .ecard .role{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--indigo); text-transform:uppercase; letter-spacing:.08em;}
-  .ecard .who{font-size:16px; font-weight:600; margin-top:8px; font-family:'IBM Plex Mono', monospace;}
-  .ecard p{color:var(--text-dim); font-size:13.7px; margin-top:12px;}
+  .ecard .role { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--indigo); text-transform: uppercase; letter-spacing: .08em; }
+  .ecard .who { font-size: 16px; font-weight: 600; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; }
+  .ecard p { color: var(--text-dim); font-size: 13.7px; margin-top: 12px; }
 
   /* ---------- feedback wall ---------- */
-  .fwall{columns:1; column-gap:16px;}
-  @media (min-width:700px){ .fwall{columns:2;} }
-  @media (min-width:1040px){ .fwall{columns:3;} }
-  .fcard{
-    break-inside:avoid; margin-bottom:16px;
-    background:var(--bg-elev); border:1px solid var(--border-soft); border-radius:var(--radius);
-    padding:20px;
+  .fwall { columns: 1; column-gap: 16px; }
+  @media (min-width: 700px) { .fwall { columns: 2; } }
+  @media (min-width: 1040px) { .fwall { columns: 3; } }
+  .fcard {
+    break-inside: avoid; margin-bottom: 16px;
+    background: var(--bg-elev); border: 1px solid var(--border-soft); border-radius: var(--radius);
+    padding: 20px;
   }
-  .fcard.priority{
-    border-color:var(--teal); background:linear-gradient(160deg, rgba(52,208,196,0.08), transparent 60%), var(--bg-elev);
+  .fcard.priority {
+    border-color: var(--teal); background: linear-gradient(160deg, rgba(52,208,196,0.08), transparent 60%), var(--bg-elev);
   }
-  .fcard .fhead{display:flex; align-items:center; gap:11px;}
-  .avatar{
-    width:34px; height:34px; border-radius:50%; flex-shrink:0;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600; color:var(--bg);
-    background:var(--teal);
+  .fcard .fhead { display: flex; align-items: center; gap: 11px; }
+  .avatar {
+    width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--bg);
+    background: var(--teal);
   }
-  .fcard.priority .avatar{background:var(--teal); box-shadow:0 0 0 3px rgba(52,208,196,0.18);}
-  .fcard:not(.priority) .avatar{background:var(--indigo); opacity:.85;}
-  .fname{font-size:13.5px; font-weight:600;}
-  .frole{font-size:11.5px; color:var(--text-faint);}
-  .fquote{color:var(--text-dim); font-size:13.6px; margin-top:14px;}
-  .fbadge{
-    display:inline-block; margin-top:12px; font-family:'IBM Plex Mono', monospace; font-size:10px;
-    color:var(--teal); border:1px solid var(--teal-dim); padding:3px 8px; border-radius:6px; letter-spacing:.05em;
+  .fcard.priority .avatar { background: var(--teal); box-shadow: 0 0 0 3px rgba(52,208,196,0.18); }
+  .fcard:not(.priority) .avatar { background: var(--indigo); opacity: .85; }
+  .fname { font-size: 13.5px; font-weight: 600; }
+  .frole { font-size: 11.5px; color: var(--text-faint); }
+  .fquote { color: var(--text-dim); font-size: 13.6px; margin-top: 14px; }
+  .fbadge {
+    display: inline-block; margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    color: var(--teal); border: 1px solid var(--teal-dim); padding: 3px 8px; border-radius: 6px; letter-spacing: .05em;
   }
 
   /* ---------- resume CTA ---------- */
-  #resume{border-bottom:none; padding-bottom:130px;}
-  .resume-box{
-    text-align:center; max-width:680px; margin:0 auto;
-    padding:64px 32px; border-radius:22px;
-    background:radial-gradient(ellipse at 50% 0%, rgba(52,208,196,0.10), transparent 65%), var(--bg-elev);
-    border:1px solid var(--border-soft);
+  #resume { border-bottom: none; padding-bottom: 130px; }
+  .resume-box {
+    text-align: center; max-width: 680px; margin: 0 auto;
+    padding: 64px 32px; border-radius: 22px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(52,208,196,0.10), transparent 65%), var(--bg-elev);
+    border: 1px solid var(--border-soft);
   }
-  .resume-box h2{font-size:clamp(24px,3.4vw,32px);}
-  .resume-box p{color:var(--text-dim); margin-top:14px; font-size:15px;}
-  .btn-primary{
-    display:inline-flex; align-items:center; gap:10px; margin-top:30px;
-    font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:14px;
-    background:var(--teal); color:#04211f; text-decoration:none;
-    padding:14px 26px; border-radius:10px;
-    transition:transform .2s ease, box-shadow .2s ease;
-    box-shadow:0 10px 30px -8px rgba(52,208,196,0.45);
+  .resume-box h2 { font-size: clamp(24px, 3.4vw, 32px); }
+  .resume-box p { color: var(--text-dim); margin-top: 14px; font-size: 15px; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 30px;
+    font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 14px;
+    background: var(--teal); color: #04211f; text-decoration: none;
+    padding: 14px 26px; border-radius: 10px;
+    transition: transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 10px 30px -8px rgba(52,208,196,0.45);
   }
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 16px 36px -8px rgba(52,208,196,0.55);}
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -8px rgba(52,208,196,0.55); }
 
-  footer{padding:36px 0; text-align:center;}
-  footer p{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); letter-spacing:.04em;}
+  footer { padding: 36px 0; text-align: center; }
+  footer p { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-faint); letter-spacing: .04em; }
 </style>
 </head>
 <body>
@@ -365,8 +370,8 @@
   <div class="navrow">
     <div class="brand"><span class="dot"></span>AS<span class="sub">&nbsp;// capability review · fy26</span></div>
     <nav class="links" id="navLinks">
-      <a href="#hero" class="active"><span class="led"></span>Intro</a>
-      <a href="#timeline"><span class="led"></span>Timeline</a>
+      <a href="#about" class="active"><span class="led"></span>Intro</a>
+      <a href="#journey"><span class="led"></span>Timeline</a>
       <a href="#deliverables"><span class="led"></span>Deliverables</a>
       <a href="#values"><span class="led"></span>Values</a>
       <a href="#awards"><span class="led"></span>Awards</a>
@@ -378,8 +383,8 @@
     </div>
   </div>
   <div id="mobnav">
-    <a href="#hero">Intro</a>
-    <a href="#timeline">Timeline</a>
+    <a href="#about">Intro</a>
+    <a href="#journey">Timeline</a>
     <a href="#deliverables">Deliverables</a>
     <a href="#values">Values</a>
     <a href="#awards">Awards</a>
@@ -389,17 +394,17 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section id="hero">
+<section id="about">
   <div class="wrap">
     <div class="hero-grid">
       <div class="reveal in">
         <div class="eyebrow">Internal Capability Review · FY26</div>
         <h1>Anchit Sanghoi<span class="role">Data &amp; AI Engineering Lead — NGI Transactions, Lloyds Banking Group</span></h1>
-        <p class="lede">Over the last 1.6 years I've moved from shipping my own tickets to <strong>owning delivery outcomes</strong> for Transactions Team 2 — leading platform migrations, recovering critical production incidents, and becoming the person teams call when something's stuck. This page is the record of that shift, in my own words and theirs.</p>
+        <p class="lede">With over <strong>8.5+ years of enterprise data engineering experience</strong>[cite: 19], I have spent the last 1.6 years at Publicis Sapient moving from shipping tactical tickets to <strong>owning end-to-end delivery outcomes</strong> for Transactions Team 2[cite: 19]. I specialize in architecting highly scalable systems, steering platform-wide cloud infrastructure migrations, and leading team engineering direction through periods of compressed timeline pressure[cite: 14, 19].</p>
         <div class="status-strip">
-          <div class="status-cell"><div class="n">1.6</div><div class="l">Years, Nov 2024–Present</div></div>
-          <div class="status-cell"><div class="n">7</div><div class="l">Core Value Awards</div></div>
-          <div class="status-cell"><div class="n">10+</div><div class="l">Teams Unblocked</div></div>
+          <div class="status-cell"><div class="n">8.5+</div><div class="l">Years Industry Exp[cite: 19]</div></div>
+          <div class="status-cell"><div class="n">1.6</div><div class="l">Years at PS[cite: 19]</div></div>
+          <div class="status-cell"><div class="n">8</div><div class="l">Core/Value Awards[cite: 3, 12, 18]</div></div>
           <div class="status-cell"><div class="n">48h</div><div class="l">Incident Recovery SLA</div></div>
         </div>
       </div>
@@ -415,7 +420,7 @@
 </section>
 
 <!-- ============ TIMELINE ============ -->
-<section id="timeline">
+<section id="journey">
   <div class="wrap">
     <div class="shead reveal">
       <div class="eyebrow">The Delivery Log</div>
@@ -446,7 +451,7 @@
         <div class="node"></div>
         <details>
           <summary><div><div class="when">2025</div><div class="title">System of Insight (SOI) shipped to production — solo</div></div><span class="chev">▸</span></summary>
-          <div class="body">Led development of the System of Insight on GCP for the Core Banking Transaction Team and single-handedly managed its production deployment — earning two separate Core Value award nominations.</div>
+          <div class="body">Led development of the System of Insight on GCP for the Core Banking Transaction Team and single-handedly managed its production deployment — earning two separate Core Value award nominations[cite: 12].</div>
           <div class="tags"><span class="tag">GCP</span><span class="tag">Production Deployment</span></div>
         </details>
       </div>
@@ -455,7 +460,7 @@
         <div class="node"></div>
         <details>
           <summary><div><div class="when">2025–2026</div><div class="title">Led PB Loans onto the Analytics Platform</div></div><span class="chev">▸</span></summary>
-          <div class="body">Requirements were evolving, timelines were tight, and the Analytics Platform was new for most of the team. I owned onboarding across BigQuery, DBT, Composer (DAGs) and TWS — for my own team and others riding the same initiative — and delivered on time despite the ambiguity. Specifically recognised by David Redmond (Technical Product Owner) for driving the onboarding and keeping delivery on track.</div>
+          <div class="body">Requirements were evolving, timelines were tight, and the Analytics Platform was new for most of the team. I owned onboarding across BigQuery, DBT, Composer (DAGs) and TWS — for my own team and others riding the same initiative — and delivered on time despite the ambiguity. Specifically recognised by David Redmond (Technical Product Owner) for driving the onboarding and keeping delivery on track[cite: 14].</div>
           <div class="tags"><span class="tag">BigQuery</span><span class="tag">Composer / DAGs</span><span class="tag">TWS</span><span class="tag">Analytics Platform</span></div>
         </details>
       </div>
@@ -473,7 +478,7 @@
         <div class="node"></div>
         <details>
           <summary><div><div class="when">Jun 2025</div><div class="title">Completed the AIGF (AI Generalist Fellowship)</div></div><span class="chev">▸</span></summary>
-          <div class="body">A 6-month intensive programme covering RAG architectures, voice agents, prompt engineering, automations, AI agents and no-code product development — investing in AI as a future-facing capability alongside deep data engineering.</div>
+          <div class="body">Completed a 6-month intensive fellowship mastering real-world AI applications including RAG architectures, prompt engineering, and intelligent workflow automations to future-proof core data stacks[cite: 19].</div>
           <div class="tags"><span class="tag">AIGF · Outskill</span><span class="tag">RAG</span><span class="tag">LLM Integration</span></div>
         </details>
       </div>
@@ -520,7 +525,7 @@
       <div class="dcard">
         <div class="idx">02 / DELIVERY</div>
         <h3>System of Insight (SOI)</h3>
-        <p class="desc">Led development on GCP for the Core Banking Transaction Team and single-handedly managed the production deployment end-to-end.</p>
+        <p class="desc">Led development on GCP for the Core Banking Transaction Team and single-handedly managed the production deployment end-to-end[cite: 12].</p>
         <div class="tags"><span class="tag">GCP</span><span class="tag">Core Banking</span></div>
       </div>
 
@@ -568,27 +573,27 @@
 
       <div class="vcard">
         <div class="vnum">01</div>
-        <div><h3>Engaging with Openness</h3><p class="story">Recognised with the Engaging with Openness Award for building trusted relationships and sharing knowledge openly — plus feedback from a line manager praising how sensitively and evidence-led I deliver difficult feedback on colleagues.</p></div>
+        <div><h3>Engaging with Openness</h3><p class="story">Recognised with the Engaging with Openness Award for building trusted relationships and sharing knowledge openly[cite: 5] — plus feedback from a line manager praising how sensitively and evidence-led I deliver difficult feedback on colleagues[cite: 13].</p></div>
       </div>
 
       <div class="vcard">
         <div class="vnum">02</div>
-        <div><h3>Learning Mindset</h3><p class="story">Completed a 6-month AI Generalist Fellowship alongside day-to-day delivery, and I'm now deliberately deepening Kafka, Java and streaming — treating the gaps as a plan, not a weakness.</p></div>
+        <div><h3>Learning Mindset</h3><p class="story">Completed a 6-month AI Generalist Fellowship alongside day-to-day delivery[cite: 19], and I'm now deliberately deepening Kafka, Java and streaming — treating the gaps as a plan, not a weakness.</p></div>
       </div>
 
       <div class="vcard">
         <div class="vnum">03</div>
-        <div><h3>Inclusive Collaboration</h3><p class="story">Nominated for Inclusive Collaboration for making complex work understandable across the team — the same instinct behind founding Engineering Connect so nobody has to learn in isolation.</p></div>
+        <div><h3>Inclusive Collaboration</h3><p class="story">Nominated for Inclusive Collaboration for making complex work understandable across the team[cite: 8] — the same instinct behind founding Engineering Connect so nobody has to learn in isolation.</p></div>
       </div>
 
       <div class="vcard">
         <div class="vnum">04</div>
-        <div><h3>Partnering for Client Impact</h3><p class="story">The through-line of almost every piece of feedback I've received — from David Redmond's confidence in my ownership of complex deliverables, to being the person clients and consumer teams come to first.</p></div>
+        <div><h3>Partnering for Client Impact</h3><p class="story">The through-line of almost every piece of feedback I've received — from David Redmond's confidence in my ownership of complex deliverables[cite: 14], to being the person clients and consumer teams come to first.</p></div>
       </div>
 
-      <div class="vcard" style="grid-column:1/-1;">
+      <div class="vcard" style="grid-column: 1 / -1;">
         <div class="vnum">05</div>
-        <div><h3>Embracing the Future</h3><p class="story">Took on PB Loans onboarding to a platform that was new to nearly everyone, with little initial clarity — and turned that ambiguity into a repeatable onboarding path other teams now follow.</p></div>
+        <div><h3>Embracing the Future</h3><p class="story">Honored with the **PS-LBG Shining Star Quarterly Award (Q2 2026) for Embracing the Future**[cite: 18]. Took on PB Loans onboarding to a platform that was new to nearly everyone[cite: 6], and turned that ambiguity into a repeatable onboarding path other teams now follow.</p></div>
       </div>
 
     </div>
@@ -600,58 +605,65 @@
   <div class="wrap">
     <div class="shead reveal">
       <div class="eyebrow amber">Awards &amp; Recognition</div>
-      <h2>Seven nominations, one thread</h2>
+      <h2>Eight nominations, one thread</h2>
       <p>Every nomination below, in different words, comes back to the same thing: ownership people can rely on.</p>
     </div>
     <div class="agrid reveal">
 
+      <div class="acard future">
+        <div class="cat">Quarterly Award (Q2 2026)</div>
+        <h3>Embracing the Future</h3>
+        <p class="blurb">Co-signed by GVP Technology Pinak Vedalankar and Managing Partner Paul Dootson. Awarded for driving forward-thinking technical capabilities and next-gen integration models within the group[cite: 18].</p>
+        <div class="by">Publicis Sapient &amp; LBG Shared Leadership[cite: 18]</div>
+      </div>
+
       <div class="acard">
         <div class="cat">Lloyds Shining Stars</div>
         <h3>Partnering for Client Impact</h3>
-        <p class="blurb">Called out as a go-to person who takes complete ownership of deliverables and has earned strong client trust in a short time.</p>
-        <div class="by">Nominated by Sridevi Pulivarthi</div>
+        <p class="blurb">Called out as a go-to person who takes complete ownership of deliverables and has earned strong client trust in a short time[cite: 9].</p>
+        <div class="by">Nominated by Sridevi Pulivarthi[cite: 9]</div>
       </div>
 
       <div class="acard">
         <div class="cat">Lloyds Shining Stars</div>
         <h3>Inclusive Collaboration</h3>
-        <p class="blurb">Recognised for the way collaboration and clear client notes made the whole team's work easier.</p>
-        <div class="by">Nominated by Hemanth K</div>
+        <p class="blurb">Recognised for the way collaboration and clear client notes made the whole team's work easier[cite: 8].</p>
+        <div class="by">Nominated by Hemanth K[cite: 8]</div>
       </div>
 
       <div class="acard">
         <div class="cat">Lloyds Shining Stars</div>
         <h3>Thriving Team</h3>
-        <p class="blurb">Recognised for leading development of the System of Insight on GCP and single-handedly managing its production deployment.</p>
-        <div class="by">Nominated by Shantanu De</div>
+        <p class="blurb">Recognised for leading development of the System of Insight on GCP and single-handedly managing its production deployment[cite: 10].</p>
+        <div class="by">Nominated by Shantanu De[cite: 10]</div>
       </div>
 
       <div class="acard">
         <div class="cat">Data COE Rewards</div>
         <h3>Partnering for Client Impact — Team</h3>
-        <p class="blurb">Same SOI delivery, recognised at the Data Centre of Excellence level for teamwork and proactive ownership.</p>
-        <div class="by">Nominated by Shantanu De</div>
+        <p class="blurb">Same SOI delivery, recognised at the Data Centre of Excellence level for teamwork and proactive ownership[cite: 12].</p>
+        <div class="by">Nominated by Shantanu De[cite: 12]</div>
       </div>
 
       <div class="acard">
         <div class="cat">Lloyds Shining Stars</div>
         <h3>Loans Leadership &amp; Delivery</h3>
-        <p class="blurb">Recognised for owning delivery across Consumer and CBS Loans, rapidly adapting to Composer and TWS, and leading recovery during production incidents.</p>
-        <div class="by">Nominated by Sumukh Sharma</div>
+        <p class="blurb">Recognised for owning delivery across Consumer and CBS Loans, rapidly adapting to Composer and TWS, and leading recovery during production incidents[cite: 3].</p>
+        <div class="by">Nominated by Sumukh Sharma[cite: 3]</div>
       </div>
 
       <div class="acard">
         <div class="cat">Lloyds Shining Stars</div>
         <h3>Client Impact Award</h3>
-        <p class="blurb">Recognised for owning the EAS and PB Loans releases to the Analytics Platform environment, and supporting other teams through their own deployments.</p>
-        <div class="by">Nominated by Parvez Alam</div>
+        <p class="blurb">Recognised for owning the EAS and PB Loans releases to the Analytics Platform environment, and supporting other teams through their own deployments[cite: 4].</p>
+        <div class="by">Nominated by Parvez Alam[cite: 4]</div>
       </div>
 
       <div class="acard">
         <div class="cat">Lloyds Shining Stars</div>
         <h3>Engaging with Openness Award</h3>
-        <p class="blurb">Recognised as Data Engineering Lead for NGI Transactions — for openness, collaboration, and building trusted relationships across clients and teams.</p>
-        <div class="by">Nominated by Rahul Verma</div>
+        <p class="blurb">Recognised as Data Engineering Lead for NGI Transactions — for openness, collaboration, and building trusted relationships across clients and teams[cite: 5].</p>
+        <div class="by">Nominated by Rahul Verma[cite: 5]</div>
       </div>
 
     </div>
@@ -689,43 +701,43 @@
 
       <div class="fcard priority">
         <div class="fhead"><div class="avatar">DR</div><div><div class="fname">David Redmond</div><div class="frole">Technical Product Owner — Transactions</div></div></div>
-        <p class="fquote">"Anchit has been instrumental in consistently delivering strong outcomes for the TXN team. He is a valued member of my leadership team, providing clear coaching, direction and support... I have full confidence in his ability to own and deliver large, complex deliverables with defined go-live dates."</p>
+        <p class="fquote">"Anchit has been instrumental in consistently delivering strong outcomes for the TXN team. He is a valued member of my leadership team, providing clear coaching, direction and support... I have full confidence in his ability to own and deliver large, complex deliverables with defined go-live dates."[cite: 14]</p>
         <span class="fbadge">★ Priority feedback</span>
       </div>
 
       <div class="fcard">
         <div class="fhead"><div class="avatar">NM</div><div><div class="fname">Nagendra Moorthy</div><div class="frole">Director, Technology</div></div></div>
-        <p class="fquote">On completing his first year: exceptional client management, trust built at lightning speed, and leadership within Transactions Team 2 that "set a high benchmark for excellence."</p>
+        <p class="fquote">On completing his first year: exceptional client management, trust built at lightning speed, and leadership within Transactions Team 2 that "set a high benchmark for excellence."[cite: 1]</p>
       </div>
 
       <div class="fcard">
-        <div class="fhead"><div class="avatar">SP</div><div><div class="fname">Sridevi Pulivarthi</div><div class="frole">Anytime Feedback, Nov 2025</div></div></div>
+        <div class="fhead"><div class="avatar">SP</div><div><div class="fname">Sridevi Pulivarthi</div><div class="frole">Anytime Feedback</div></div></div>
         <p class="fquote">Always proactive in leading scrum ceremonies and team activities; played a major role in PB Loans backlog readiness and coordinating with the Product Owner and business analysts.</p>
       </div>
 
       <div class="fcard">
         <div class="fhead"><div class="avatar">JH</div><div><div class="fname">Jonathan Howe</div><div class="frole">Lead Software Engineer</div></div></div>
-        <p class="fquote">Thanked Anchit for helping him ramp up as a new line manager — praised for giving sensitive, evidence-based feedback rather than "feelings and conjecture."</p>
+        <p class="fquote">Thanked Anchit for helping him ramp up as a new line manager — praised for giving sensitive, evidence-based feedback rather than "feelings and conjecture."[cite: 13]</p>
       </div>
 
       <div class="fcard">
         <div class="fhead"><div class="avatar">JH</div><div><div class="fname">Joe Hoyle</div><div class="frole">Senior Quality Engineer</div></div></div>
-        <p class="fquote">Highly responsive, strong technical knowledge in difficult situations, and attention to detail that smooths both the CR process and deployments.</p>
+        <p class="fquote">Highly responsive, strong technical knowledge in difficult situations, and attention to detail that smooths both the CR process and deployments[cite: 15].</p>
       </div>
 
       <div class="fcard">
         <div class="fhead"><div class="avatar">JW</div><div><div class="fname">James Westwood</div><div class="frole">Engineer, Transactions</div></div></div>
-        <p class="fquote">Stayed engaged with a duplicate-data incident right up to the start of his own holiday, and guided the team through TWS improvements remotely from his knowledge sharing in PRE.</p>
+        <p class="fquote">Stayed engaged with a duplicate-data incident right up to the start of his own holiday, and guided the team through TWS improvements remotely from his knowledge sharing in PRE[cite: 16].</p>
       </div>
 
       <div class="fcard">
         <div class="fhead"><div class="avatar">NC</div><div><div class="fname">Natalie Crawford</div><div class="frole">Finance Data Lab</div></div></div>
-        <p class="fquote">Specifically thanked Anchit for SME input, engineering support and environment access that were "invaluable" to the PB Loans work.</p>
+        <p class="fquote">Specifically thanked Anchit for SME input, engineering support and environment access that were "invaluable" to the PB Loans work[cite: 2].</p>
       </div>
 
       <div class="fcard">
         <div class="fhead"><div class="avatar">SS</div><div><div class="fname">Sumukh Sharma</div><div class="frole">Core Banking Platform</div></div></div>
-        <p class="fquote">Flagged Anchit by name in a client recognition thread for the NGI Transactions team's work — one of four people specifically called out.</p>
+        <p class="fquote">Flagged Anchit by name in a client recognition thread for the NGI Transactions team's work — one of four people specifically called out[cite: 2].</p>
       </div>
 
     </div>
@@ -738,7 +750,7 @@
     <div class="resume-box reveal">
       <div class="eyebrow" style="justify-content:center;">Full Record</div>
       <h2>Everything above, in resume form</h2>
-      <p>8.5+ years across GCP, big data and AI-integrated delivery — from System Engineer to Data &amp; AI Engineering Lead. The full detail behind every card on this page.</p>
+      <p>8.5+ years across GCP, big data and AI-integrated delivery — from System Engineer to Data &amp; AI Engineering Lead[cite: 19]. The full detail behind every card on this page[cite: 19].</p>
       <a class="btn-primary" href="Anchit_Sanghoi_Resume_India_2026_final.pdf" download>⬇ Download full resume (PDF)</a>
     </div>
   </div>
@@ -756,7 +768,7 @@
   document.querySelectorAll('#mobnav a').forEach(a => a.addEventListener('click', () => mobnav.classList.remove('open')));
 
   // scroll-spy — position-based (reliable for sections of any height)
-  const sections = ['hero','timeline','deliverables','values','awards','feedback']
+  const sections = ['about','journey','deliverables','values','awards','feedback']
     .map(id => document.getElementById(id))
     .filter(Boolean);
   const navAnchors = document.querySelectorAll('nav.links a, #mobnav a');
@@ -771,7 +783,6 @@
     for(const sec of sections){
       if(sec.offsetTop <= scrollPos) current = sec.id;
     }
-    // if we're within ~200px of the bottom of the page, force the last section active
     if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
       current = sections[sections.length - 1].id;
     }
