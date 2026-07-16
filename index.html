@@ -70,7 +70,7 @@
     transition: color 0.2s;
   }
 
-  /* INTERACTIVE HOVER FOR STRONG (optional, for more pop) */
+  /* INTERACTIVE HOVER FOR STRONG */
   strong:hover, b:hover {
     color: var(--teal);
     cursor: pointer;
@@ -102,7 +102,7 @@
   .eyebrow.indigo{color:var(--indigo);}
   .eyebrow.indigo::before{background:var(--indigo); box-shadow:0 0 0 3px rgba(139,147,248,0.18);}
 
-  /* ---------- pipeline rail (signature element) ---------- */
+  /* ---------- pipeline rail ---------- */
   .rail{
     position:fixed;
     left:36px; top:0; bottom:0;
@@ -325,7 +325,6 @@
     padding:24px; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
     box-shadow:0 2px 12px -4px var(--green-light);
   }
-  .dcard:hover{transform:translateY(-3px); border-color:var(--green); box-shadow:0 14px 30px -14px rgba(62,233,138,0.25);}
   .dcard .idx{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-faint); letter-spacing:.08em;}
   .dcard h3{font-size:17px; margin-top:10px; font-weight:600;}
   .dcard .desc{color:var(--text-dim); font-size:14px; margin-top:10px;}
@@ -367,7 +366,7 @@
   .acard .blurb strong{color:var(--green);}
   .acard .by{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-top:14px; padding-top:14px; border-top:1px solid var(--border-soft);}
 
-  /* ---------- endorsements (promotion letters) ---------- */
+  /* ---------- endorsements ---------- */
   .egrid{display:grid; grid-template-columns:1fr; gap:16px; margin-bottom:60px;}
   @media (min-width:900px){ .egrid{grid-template-columns:repeat(3,1fr);} }
   .ecard{
@@ -393,7 +392,7 @@
   .fcard.priority{
     border-color:var(--green); background:linear-gradient(160deg, rgba(62,233,138,0.08), transparent 60%), var(--bg-elev);
   }
-  .fcard .fhead{display:flex; align-items:center; gap:11px;}
+  .fwall .fhead{display:flex; align-items:center; gap:11px;}
   .avatar{
     width:34px; height:34px; border-radius:50%; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
@@ -440,67 +439,86 @@
   footer{padding:36px 0; text-align:center;}
   footer p{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); letter-spacing:.04em;}
 
-  /* --- AWARDS: Amber/Gold Bounce Animation --- */
-  .acard {
-    border-color: var(--amber);
-    box-shadow: 0 2px 12px -4px rgba(242,184,75,0.12);
-    transition: transform 0.18s cubic-bezier(.4,1.8,.6,1), box-shadow 0.18s, border-color 0.18s;
-  }
-  .acard:hover {
-    animation: bounceCard 0.5s;
-    border-color: var(--amber);
-    box-shadow: 0 8px 32px -10px rgba(242,184,75,0.30);
-  }
-  @keyframes bounceCard {
-    0%   { transform: scale(1); }
-    30%  { transform: scale(1.08, 0.96); }
-    50%  { transform: scale(0.97, 1.04); }
-    70%  { transform: scale(1.03, 0.98); }
-    100% { transform: scale(1); }
-  }
 
-  /* --- VALUES: Indigo Pop-up Animation on Reveal --- */
-  .vcard {
-    border-color: var(--indigo-dim);
-    box-shadow: 0 2px 12px -4px rgba(139,147,248,0.14);
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-  .vcard.reveal {
-    opacity: 0;
-    transform: scale(0.92) translateY(24px);
-    transition: opacity .6s cubic-bezier(.4,0,.2,1), transform .6s cubic-bezier(.4,0,.2,1);
-  }
-  .vcard.reveal.in {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  /* ==========================================================================
+     TAILORED REVEAL ANIMATIONS & HOVER STATES (FY26 CAPABILITY REVIEW)
+     ========================================================================== */
 
-  /* --- FEEDBACK: Teal Fade-in-Up Animation --- */
-  .fcard {
-    border-color: var(--teal-dim);
-    box-shadow: 0 2px 12px -4px rgba(52,208,196,0.13);
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-  .fcard.reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
-  }
-  .fcard.reveal.in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* --- DELIVERABLES: Keep Green Glow/Lift --- */
+  /* --- 1. DELIVERABLES (Keep Green Glow/Lift) --- */
   .dcard {
     border-color: var(--green);
     box-shadow: 0 2px 12px -4px var(--green-light);
-    transition: transform .25s, border-color .25s, box-shadow .25s;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
   }
   .dcard:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     border-color: var(--green);
-    box-shadow: 0 14px 30px -14px rgba(62,233,138,0.25);
+    box-shadow: 0 14px 30px -14px rgba(62,233,138,0.35);
+  }
+
+  /* --- 2. VALUES: Indigo Elastic Scale Pop-In --- */
+  /* Target cards dynamically inside the grid when parent enters viewport */
+  .vgrid.reveal .vcard {
+    opacity: 0;
+    transform: scale(0.92) translateY(15px);
+    transition: opacity 0.6s cubic-bezier(.34, 1.56, .64, 1), 
+                transform 0.6s cubic-bezier(.34, 1.56, .64, 1),
+                border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .vgrid.reveal.in .vcard {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  .vcard {
+    border-color: var(--indigo-dim);
+    box-shadow: 0 2px 12px -4px rgba(139,147,248,0.15);
+  }
+  .vcard:hover {
+    transform: translateY(-3px);
+    border-color: var(--indigo);
+    box-shadow: 0 8px 24px -6px rgba(139,147,248,0.4);
+  }
+
+  /* --- 3. AWARDS: Amber/Gold Bounce Animation --- */
+  .acard {
+    border-color: var(--amber);
+    box-shadow: 0 2px 12px -4px rgba(242,184,75,0.15);
+    transition: transform 0.2s cubic-bezier(.4,1.8,.6,1), box-shadow 0.2s, border-color 0.2s;
+  }
+  .acard:hover {
+    animation: bounceCard 0.5s forwards;
+    border-color: var(--amber);
+    box-shadow: 0 8px 32px -10px rgba(242,184,75,0.4);
+  }
+  @keyframes bounceCard {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.06, 0.94); }
+    50%  { transform: scale(0.98, 1.03); }
+    70%  { transform: scale(1.02, 0.99); }
+    100% { transform: scale(1) translateY(-4px); }
+  }
+
+  /* --- 4. FEEDBACK: Teal Elegant Glide (No Multi-Column Glitches) --- */
+  /* Animating the full wrapper avoids parent height fragmentation inside CSS columns */
+  .fwall.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .fwall.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fcard {
+    border-color: var(--teal-dim);
+    box-shadow: 0 2px 12px -4px rgba(52,208,196,0.15);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .fcard:hover {
+    transform: translateY(-3px);
+    border-color: var(--teal);
+    box-shadow: 0 10px 24px -10px rgba(52,208,196,0.35);
   }
 
 </style>
@@ -748,27 +766,27 @@
     </div>
     <div class="vgrid reveal">
 
-      <div class="vcard reveal">
+      <div class="vcard">
         <div class="vnum">01</div>
         <div><h3>Engaging with Openness</h3><p class="story">Recognised with the Engaging with Openness Award for building trusted relationships and sharing knowledge openly — plus feedback from a line manager praising how sensitively and evidence-led I deliver difficult feedback on colleagues.</p></div>
       </div>
 
-      <div class="vcard reveal">
+      <div class="vcard">
         <div class="vnum">02</div>
         <div><h3>Learning Mindset</h3><p class="story">Completed a 6-month AI Generalist Fellowship alongside day-to-day delivery, and I'm now deliberately deepening Kafka, Java and streaming — treating the gaps as a plan, not a weakness.</p></div>
       </div>
 
-      <div class="vcard reveal">
+      <div class="vcard">
         <div class="vnum">03</div>
         <div><h3>Inclusive Collaboration</h3><p class="story">Nominated and won the Inclusive Collaboration PS-LBG Shining award for making complex work understandable across the team — the same instinct behind founding Engineering Connect so nobody has to learn in isolation.</p></div>
       </div>
 
-      <div class="vcard reveal">
+      <div class="vcard">
         <div class="vnum">04</div>
         <div><h3>Partnering for Client Impact</h3><p class="story">The through-line of almost every piece of feedback I've received — from David Redmond's confidence in my ownership of complex deliverables, to being the person clients and consumer teams come to first.</p></div>
       </div>
 
-      <div class="vcard reveal" style="grid-column:1/-1;">
+      <div class="vcard" style="grid-column:1/-1;">
         <div class="vnum">05</div>
         <div><h3>Embracing the Future</h3><p class="story">Nominated and won the Embrace The Future PS-LBG Shining award as I Took on PB Loans onboarding to a platform that was new to nearly everyone, with little initial clarity — and turned that ambiguity into a repeatable onboarding path other teams now follow.</p></div>
       </div>
@@ -796,9 +814,9 @@
 
       <div class="acard">
         <div class="cat">PS-LBG Shining Star Quarterly Award 2025</div>
-        <h3>Inclusice Collaboration</h3>
+        <h3>Inclusive Collaboration</h3>
         <p class="blurb">Called out as a go-to person who takes complete ownership of deliverables and has earned strong client trust in a short time and for making complex work understandable across the team — the same instinct behind founding Engineering Connect so nobody has to learn in isolation..</p>
-        <span class="fbadge">★ Last year's Shinig Star Award</span>
+        <span class="fbadge">★ Last year's Shining Star Award</span>
       </div>
 
        <div class="acard">
@@ -812,7 +830,7 @@
         <div class="cat">Client Appreciation</div>
         <h3>Change - Strategy</h3>
         <p class="blurb">Recognised for leading development and delivery of PB Loans on GCP and managing its production deployment to a new ecosystem flawlessly.</p>
-        <div class="by">Nominated by David Redmond(PO - CLient)</div>
+        <div class="by">Nominated by David Redmond(PO - Client)</div>
       </div>
 
       <div class="acard">
@@ -876,43 +894,43 @@
 
     <div class="fwall reveal">
 
-      <div class="fcard priority reveal">
+      <div class="fcard priority">
         <div class="fhead"><div class="avatar">DR</div><div><div class="fname">David Redmond</div><div class="frole">Lloyds Technical Product Owner — Transactions</div></div></div>
         <p class="fquote">"Anchit has been instrumental in consistently delivering strong outcomes for the TXN team. He is a valued member of my leadership team, providing clear coaching, direction and support... I have full confidence in his ability to own and deliver large, complex deliverables with defined go-live dates."</p>
         <span class="fbadge">★ Priority feedback</span>
       </div>
 
-      <div class="fcard reveal">
+      <div class="fcard priority">
         <div class="fhead"><div class="avatar">NM</div><div><div class="fname">Nagendra Moorthy</div><div class="frole">Director, Technology</div></div></div>
         <p class="fquote">On completing his first year: exceptional client management, trust built at lightning speed, and leadership within Transactions Team 2 that "set a high benchmark for excellence."</p>
       </div>
 
-      <div class="fcard reveal">
+      <div class="fcard">
         <div class="fhead"><div class="avatar">SP</div><div><div class="fname">Sridevi Pulivarthi</div><div class="frole">Anytime Feedback, Nov 2025</div></div></div>
         <p class="fquote">Always proactive in leading scrum ceremonies and team activities; played a major role in PB Loans backlog readiness and coordinating with the Product Owner and business analysts.</p>
       </div>
 
-      <div class="fcard reveal">
+      <div class="fcard">
         <div class="fhead"><div class="avatar">JH</div><div><div class="fname">Jonathan Howe</div><div class="frole">Lloyds Line Manager</div></div></div>
         <p class="fquote">Thanked Anchit for helping him ramp up as a new line manager — praised for giving sensitive, evidence-based feedback rather than "feelings and conjecture."</p>
       </div>
 
-      <div class="fcard reveal">
+      <div class="fcard">
         <div class="fhead"><div class="avatar">JH</div><div><div class="fname">Joe Hoyle</div><div class="frole">Senior Quality Engineer</div></div></div>
         <p class="fquote">Highly responsive, strong technical knowledge in difficult situations, and attention to detail that smooths both the CR process and deployments.</p>
       </div>
 
-      <div class="fcard reveal">
+      <div class="fcard">
         <div class="fhead"><div class="avatar">JW</div><div><div class="fname">James Westwood</div><div class="frole">Engineer, Transactions</div></div></div>
         <p class="fquote">Stayed engaged with a duplicate-data incident right up to the start of his own holiday, and guided the team through TWS improvements remotely from his knowledge sharing in PRE.</p>
       </div>
 
-      <div class="fcard reveal">
+      <div class="fcard">
         <div class="fhead"><div class="avatar">NC</div><div><div class="fname">Natalie Crawford</div><div class="frole">Finance Data Lab</div></div></div>
         <p class="fquote">Specifically thanked Anchit for SME input, engineering support and environment access that were "invaluable" to the PB Loans work.</p>
       </div>
 
-      <div class="fcard reveal">
+      <div class="fcard">
         <div class="fhead"><div class="avatar">SS</div><div><div class="fname">Sumukh Sharma</div><div class="frole">Core Banking Platform</div></div></div>
         <p class="fquote">Flagged Anchit by name in a client recognition thread for the NGI Transactions team's work — one of four people specifically called out.</p>
       </div>
