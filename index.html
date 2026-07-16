@@ -27,6 +27,7 @@
     --green:#3ee98a;
     --green-dark:#1e7c4a;
     --green-light:#b2f5d6;
+    --green-glow:rgba(62,233,138,0.35);
     --radius:14px;
     --maxw:1180px;
     /* INTERACTIVE ACCENTS */
@@ -438,6 +439,70 @@
 
   footer{padding:36px 0; text-align:center;}
   footer p{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); letter-spacing:.04em;}
+
+  /* --- AWARDS: Amber/Gold Bounce Animation --- */
+  .acard {
+    border-color: var(--amber);
+    box-shadow: 0 2px 12px -4px rgba(242,184,75,0.12);
+    transition: transform 0.18s cubic-bezier(.4,1.8,.6,1), box-shadow 0.18s, border-color 0.18s;
+  }
+  .acard:hover {
+    animation: bounceCard 0.5s;
+    border-color: var(--amber);
+    box-shadow: 0 8px 32px -10px rgba(242,184,75,0.30);
+  }
+  @keyframes bounceCard {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.08, 0.96); }
+    50%  { transform: scale(0.97, 1.04); }
+    70%  { transform: scale(1.03, 0.98); }
+    100% { transform: scale(1); }
+  }
+
+  /* --- VALUES: Indigo Pop-up Animation on Reveal --- */
+  .vcard {
+    border-color: var(--indigo-dim);
+    box-shadow: 0 2px 12px -4px rgba(139,147,248,0.14);
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .vcard.reveal {
+    opacity: 0;
+    transform: scale(0.92) translateY(24px);
+    transition: opacity .6s cubic-bezier(.4,0,.2,1), transform .6s cubic-bezier(.4,0,.2,1);
+  }
+  .vcard.reveal.in {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  /* --- FEEDBACK: Teal Fade-in-Up Animation --- */
+  .fcard {
+    border-color: var(--teal-dim);
+    box-shadow: 0 2px 12px -4px rgba(52,208,196,0.13);
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .fcard.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+  }
+  .fcard.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- DELIVERABLES: Keep Green Glow/Lift --- */
+  .dcard {
+    border-color: var(--green);
+    box-shadow: 0 2px 12px -4px var(--green-light);
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .dcard:hover {
+    transform: translateY(-3px);
+    border-color: var(--green);
+    box-shadow: 0 14px 30px -14px rgba(62,233,138,0.25);
+  }
+
 </style>
 </head>
 <body>
